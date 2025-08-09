@@ -31,10 +31,10 @@ const NavBar = () => {
       </NavLink>
       <NavLink
         className="text-white text-lg font-semibold"
-        to="/about"
+        to="/addfood"
         onClick={() => setIsOpen(false)}
       >
-        About Us
+        Add Food
       </NavLink>
     </>
   );
