@@ -1,7 +1,6 @@
 import React, { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 
-
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 
@@ -9,7 +8,6 @@ const Login = () => {
   const { signInUser, googleSignIn } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
 
   const handleLogin = (e) => {
     e.preventDefault();

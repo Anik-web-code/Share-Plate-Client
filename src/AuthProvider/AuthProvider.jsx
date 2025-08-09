@@ -8,9 +8,10 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { auth } from "../Firebase/firebase.init";
+
 import { AuthContext } from "./AuthContext";
 import axios from "axios";
+import auth from "../Firebase/firebase.init";
 
 const googleProvider = new GoogleAuthProvider();
 
