@@ -8,12 +8,12 @@ const slides = [
     desc: "Bridge the gap between surplus and scarcity. Help reduce food waste by sharing your extra meals with those who need them the most. Together, we can make hunger a thing of the past.",
   },
   {
-    bg: "https://i.postimg.cc/VNCMvdX1/FOOD-FOR-HUNGRY-15-5-2024-5.jpg",
+    bg: "https://i.postimg.cc/Fs4g5tSZ/photo-1461354464878-ad92f492a5a0.jpg",
     title: "Every Meal Matters",
     desc: "Whether you're a restaurant, home cook, or donor — your shared meal brings hope. Post available food, and let nearby volunteers or seekers find it quickly and easily.",
   },
   {
-    bg: "https://i.postimg.cc/cCJVMyxx/110777983-volunteers-share-food-to-the-poor-to-relieve-hunger-charity-concept.jpg",
+    bg: "https://i.postimg.cc/ht4Lv9pQ/premium-photo-1683141173692-aba4763bce41.jpg",
     title: "Fight Hunger in Your Community",
     desc: "Join a growing network of food heroes working together to end hunger, one plate at a time. Make a difference — locally, compassionately, and effectively.",
   },
