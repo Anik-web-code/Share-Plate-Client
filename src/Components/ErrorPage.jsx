@@ -15,6 +15,7 @@ const ErrorPage = () => {
             src="https://i.ibb.co/HDyFLrWY/images.png"
             alt="404 Illustration"
             className="max-w-[400px] mx-auto"
+            
           />
         </div>
       </div>
