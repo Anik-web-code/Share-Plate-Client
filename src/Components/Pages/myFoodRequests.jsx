@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/AuthContext";
+import Loader from "../../Loader/Loader";
 
 const MyFoodRequests = () => {
   const { email } = useParams();
@@ -27,7 +28,7 @@ const MyFoodRequests = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <span className="loading loading-spinner loading-lg"></span>
+        <Loader></Loader>
       </div>
     );
   }

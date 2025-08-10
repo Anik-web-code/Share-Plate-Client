@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import { Helmet } from "react-helmet-async";
+import Loader from "../../Loader/Loader";
 
 const fetchFoodById = async (id) => {
   const res = await fetch(`https://shareplate-server.onrender.com/foods/${id}`);
@@ -41,7 +42,6 @@ const FoodDetails = () => {
 
       if (!res.ok) throw new Error("Failed to send request");
 
-      // Mark food as requested
       await fetch(
         `https://shareplate-server.onrender.com/foods/${requestData.foodId}`,
         {
@@ -79,7 +79,14 @@ const FoodDetails = () => {
     requestMutation.mutate(requestData);
   };
 
-  if (isLoading) return <h1 className="text-center text-[30px]">Loading...</h1>;
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-[300px]">
+        <Loader />
+      </div>
+    );
+  }
+
   if (isError || !food) return <p className="text-center">Food not found</p>;
 
   return (
@@ -112,7 +119,6 @@ const FoodDetails = () => {
         Request
       </button>
 
-      {/* Request Modal */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-2xl w-[90%] md:w-[500px]">

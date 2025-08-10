@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import Loader from "../../Loader/Loader";
 
 const ManageFoods = () => {
   const { user } = useContext(AuthContext);
@@ -83,8 +84,13 @@ const ManageFoods = () => {
     toast.success("Food updated successfully!");
   };
 
-  if (loading) return <h1 className="text-[24px] text-center">Loading...</h1>;
-
+  if (loading)  {
+    return (
+      <div className="flex justify-center items-center min-h-[300px]">
+        <Loader />
+      </div>
+    );
+  }
   return (
       <div className="p-6">
           <Helmet><title>Manage Foods</title></Helmet>
