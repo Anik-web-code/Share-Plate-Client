@@ -2,8 +2,8 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <section id="contact" className="bg-[#ff003320] py-12 px-4 md:px-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#ff0033] mb-5">
+    <section id="contact" className="bg-[#FF6B6B20] py-12 px-4 md:px-20">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#FF6B6B] mb-5">
         Contact Us
       </h2>
 
@@ -16,7 +16,7 @@ const ContactUs = () => {
             <input
               type="text"
               placeholder="Enter your name"
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff3355]"
+              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]"
               required
             />
           </div>
@@ -28,7 +28,7 @@ const ContactUs = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff3355]"
+              className="w-full mt-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]"
               required
             />
           </div>
@@ -45,7 +45,7 @@ const ContactUs = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#ff0033] hover:bg-[#ff3355] text-white font-semibold py-2 rounded-lg transition"
+            className="w-full bg-[#FF6B6B] hover:bg-[#FF6B6B95] text-white font-semibold py-2 rounded-lg transition"
           >
             Send Message
           </button>
@@ -57,14 +57,12 @@ const ContactUs = () => {
             Have questions about donating or receiving blood? Feel free to send
             us a message using the form or reach out directly!
           </p>
-          <div
-            className="text-[18px] font-medium"
-          >
+          <div className="text-[18px] font-medium">
             <p>
               <strong>Phone:</strong> +880 1998-739878
             </p>
             <p>
-              <strong>Email:</strong> support@bloodstring.org
+              <strong>Email:</strong> support@shareplate.org
             </p>
             <p>
               <strong>Address:</strong> Dhaka, Bangladesh

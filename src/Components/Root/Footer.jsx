@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FFFFFF] py-16 flex flex-col items-center justify-center mt-10">
+    <div className="bg-[#FFFFFF] py-16 flex flex-col items-center justify-center">
       <div className="flex gap-2 items-center mx-40">
         <img
           className="h-12 w-12 rounded-full"

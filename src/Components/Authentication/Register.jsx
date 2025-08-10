@@ -1,11 +1,11 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Register = () => {
-  const { createUser, googleSignIn } = use(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -63,7 +63,7 @@ const Register = () => {
       <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl">
         <div className="card-body">
           <form onSubmit={handleRegister} className="fieldset">
-            <label className="label">Name</label>
+            <label className="label dark:text-white">Name</label>
             <input
               name="name"
               type="text"
@@ -72,7 +72,7 @@ const Register = () => {
               required
             />
 
-            <label className="label">Email</label>
+            <label className="label dark:text-white">Email</label>
             <input
               name="email"
               type="email"
@@ -81,7 +81,7 @@ const Register = () => {
               required
                       />
                       
-            <label className="label">Password</label>
+            <label className="label dark:text-white">Password</label>
             <input
               name="password"
               type="password"
@@ -89,7 +89,7 @@ const Register = () => {
               placeholder="Password"
               required
             />
-            <label className="label">Photo URL</label>
+            <label className="label dark:text-white">Photo URL</label>
             <input
               name="photoURL"
               type="text"
@@ -99,7 +99,7 @@ const Register = () => {
             />
             <button className="btn btn-neutral mt-4">Register</button>
           </form>
-          <p>
+          <p className="dark:text-white">
             Already Have an Account?{" "}
             <Link className="text-blue-400 underline" to="/login">
               Login
