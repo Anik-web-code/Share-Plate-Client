@@ -7,7 +7,6 @@ import Loader from "../../../Loader/Loader";
 const AvailableFoods = () => {
   const { foods } = useContext(AuthContext);
 
-  // Filter and prepare featured foods only if foods is loaded
   const featuredFoods =
     foods && foods.length > 0
       ? foods
@@ -22,7 +21,6 @@ const AvailableFoods = () => {
         Featured Foods
       </h1>
 
-      {/* Show loader OR grid depending on foods state */}
       {!foods || foods.length === 0 ? (
         <div className="flex justify-center items-center min-h-[300px]">
           <Loader />
