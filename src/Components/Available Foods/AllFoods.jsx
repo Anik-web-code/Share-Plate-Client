@@ -2,26 +2,46 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthContext";
 import FoodCard from "../Homepage/Available Foods/FoodCard";
 import { Helmet } from "react-helmet-async";
+import Loader from "../../Loader/Loader";
 
 const AllFoods = () => {
   const { foods } = useContext(AuthContext);
-  const [isThreeCol, setIsThreeCol] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOrder, setSortOrder] = useState("desc");
 
-  const availableFoods = foods
+  if (!foods || foods.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-[300px]">
+        <Loader />
+      </div>
+    );
+  }
+
+  let availableFoods = foods
     .filter(
       (food) =>
         food.status === "available" &&
         food.foodName.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
+    );
+
+ 
+  availableFoods = availableFoods.sort((a, b) => {
+    const qtyA = Number(a.quantity);
+    const qtyB = Number(b.quantity);
+
+    if (sortOrder === "asc") {
+      return qtyA - qtyB;
+    } else {
+      return qtyB - qtyA;
+    }
+  });
 
   return (
-      <div className="w-[96%] mx-auto lg:w-[80%] md:w-[90%] mt-24">
-          <Helmet><title>Available Foods</title></Helmet>
-      <h1 className="text-center text-[48px] font-medium mb-5">
-        Featured Foods
-      </h1>
+    <div className="w-[96%] mx-auto lg:w-[80%] md:w-[90%] mt-24">
+      <Helmet>
+        <title>Available Foods</title>
+      </Helmet>
+      <h1 className="text-center text-[48px] font-medium mb-5">Available Foods</h1>
 
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <input
@@ -31,19 +51,18 @@ const AllFoods = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button
-          onClick={() => setIsThreeCol((prev) => !prev)}
-          className="bg-[#FF6B6B] text-white px-6 py-2 rounded hover:bg-[#e55a5a]"
+
+        <select
+          className="border border-gray-300 rounded px-4 py-2 w-full md:w-[36%]"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
         >
-          {isThreeCol ? "Change to 2 Columns" : "Change to 3 Columns"}
-        </button>
+          <option value="desc">Quantity: High to Low</option>
+          <option value="asc">Quantity: Low to High</option>
+        </select>
       </div>
 
-      <div
-        className={`grid grid-cols-1 ${
-          isThreeCol ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2"
-        } gap-6 place-items-center`}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         {availableFoods.length > 0 ? (
           availableFoods.map((food) => <FoodCard key={food._id} food={food} />)
         ) : (

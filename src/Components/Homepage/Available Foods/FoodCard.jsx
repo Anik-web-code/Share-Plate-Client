@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router";
+import Loader from "../../../Loader/Loader";
 
 const FoodCard = ({ food }) => {
+
   return (
     <div className="mb-6 dark:text-[#FFFFFF]">
       <div className="card bg-base-100 w-96 shadow-xl">
